@@ -10,6 +10,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.lang.NumberFormatException
 
 class MainActivity : AppCompatActivity() {
@@ -38,6 +42,15 @@ class MainActivity : AppCompatActivity() {
             val first = getIntegerOfEditText(editTextOne)
             val second = getIntegerOfEditText(editTextTwo)
             output.text = addNumbersTogether(first, second).toString()
+
+            lifecycleScope.launch(Dispatchers.Main) {
+                withContext(Dispatchers.IO){
+                    println("I am executing Thread ${Thread.currentThread().name}")
+                }
+                withContext(Dispatchers.Default){
+                    println("I am executing Thread ${Thread.currentThread().name}")
+                }
+            }
         }
 
         val navigate : Button = findViewById(R.id.navigateButton)

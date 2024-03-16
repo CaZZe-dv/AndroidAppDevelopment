@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Magic Card List</string>
+    <string name="load_cards">Load Cards</string>
+</resources>

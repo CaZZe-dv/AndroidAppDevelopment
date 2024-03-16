@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.homework1"
+    namespace = "com.example.homework2"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.homework1"
+        applicationId = "com.example.homework2"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
@@ -42,7 +42,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    //Added manually
+
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
 
     testImplementation(libs.junit)
